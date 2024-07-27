@@ -1,15 +1,11 @@
 export default function CircleBit({
-  size = "130px",
-  title = "web",
-  value = "194300",
-  color = "#9d7ffe",
-  left,
-  top,
-  hierarchy,
-  right,
-  bottom,
+  size,
+  label,
+  value,
+  color,
   titleSize,
   valueSize,
+  style,
 }) {
   return (
     <>
@@ -17,37 +13,31 @@ export default function CircleBit({
         className="tooltip"
         style={{
           textAlign: "center",
-          position: "absolute",
-          top: top,
-          right: right,
-          left: left,
-          bottom: bottom,
           borderRadius: "100000px",
           backgroundColor: color,
-          border: "4px solid white",
-          width: size,
-          height: size,
+          border: `${size / 20}px solid white`,
+          width: size + "px",
+          height: size + "px",
           color: "white",
           display: "grid",
           placeItems: "center",
           transition: "all 0.4s",
-          zIndex: hierarchy,
         }}
       >
         <div>
           <div
             style={{
-              fontSize: titleSize,
+              fontSize: size / 10,
             }}
           >
-            {title}
+            {label}
           </div>
           <h2
             style={{
-              fontSize: valueSize,
+              fontSize: size / 6,
             }}
           >
-            value
+            {value}
           </h2>
         </div>
 
